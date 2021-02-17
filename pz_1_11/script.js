@@ -139,3 +139,51 @@ function mathOperations(number1, number2, operationType) {
     }
 }
 
+// Task 9
+function numberDetector(number) {
+    let description = "";
+    if (number < 0) {
+        description += "Negative ";
+    }
+    if (number > 0) {
+        description += "Positive ";
+    }
+    function isSimple(number) {
+        for (let i = 2; i < number; i++) {
+            if (number % i == 0) return "Not Simple ";
+        }
+        return "Simple ";
+    }
+    description += isSimple(number);
+    if (number % 2 == 0) {
+        description += "Dividable by 2 ";
+    }
+    if (number % 2 != 0) {
+        description += "Not Dividable by 2 ";
+    }
+    if (number % 3 == 0) {
+        description += "Dividable by 3 ";
+    }
+    if (number % 3 != 0) {
+        description += "Not Dividable by 3 ";
+    }
+    if (number % 5 == 0) {
+        description += "Dividable by 5 ";
+    }
+    if (number % 5 != 0) {
+        description += "Not Dividable by 5 ";
+    }
+    if (number % 6 == 0) {
+        description += "Dividable by 6 ";
+    }
+    if (number % 6 != 0) {
+        description += "Not Dividable by 6 ";
+    }
+    if (number % 9 == 0) {
+        description += "Dividable by 9 ";
+    }
+    if (number % 9 != 0) {
+        description += "Not Dividable by 9 ";
+    }
+    return description;
+}
