@@ -187,3 +187,14 @@ function numberDetector(number) {
     }
     return description;
 }
+
+// Task 10
+function arrayTrick(array) {
+    array.reverse();
+    for (let i = 0; i < array.length; i++) {
+        if (!isNaN(Number.parseInt(array[i]))) {
+            array[i] *= array[i];
+        }
+    }
+    return array;
+}
