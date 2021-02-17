@@ -6,3 +6,8 @@ function seconds (total) {
         return total % 60;
 
 }
+
+// Task 2
+function perimeter (sideLength, count) {
+    return sideLength * count;
+}
