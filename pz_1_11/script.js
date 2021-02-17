@@ -93,3 +93,26 @@ function magicArrayFunction(elementsCount) {
     console.log("Odd numbers is " + magicArrayOfOdd);
 }
 
+// Task 7
+function magic2DArrayFunction() {
+    let magicArray = [[],[],[],[],[]];
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            magicArray[i][j] = Math.round(-50 + Math.random() * (100));
+        }
+    }
+    console.log(magicArray);
+    setTimeout(()=>{
+        let newMagicArray = magicArray.slice();
+        for (let i = 0; i < 5; i++) {
+            if (newMagicArray[i][i] < 0) {
+                newMagicArray[i][i] = 0;
+            }
+            if (newMagicArray[i][i] > 0) {
+                newMagicArray[i][i] = 1;
+            }
+        }
+        console.log(newMagicArray);
+    }, 2000);
+}
+
