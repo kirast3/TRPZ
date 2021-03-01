@@ -80,6 +80,19 @@ class Random {
 // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // console.log(Random.nextElement(arr))
 
+//Task 4
+function createGreetable (str) {
+    const result = function (){
+    };
+    result.prototype.name = str;
+    result.prototype.greet = function (greeting){
+        return `${greeting}, ${result.prototype.name} !`;
+    }
+    return result;
+}
+const g = createGreetable("Oleg");
+console.log (g.prototype.greet('Hello'));
+
 //Task 5
 
 function sequence(start, step) {
@@ -138,11 +151,17 @@ class Task {
     }
     subtask(){
         let today = new Date();
-        return Math.round(( ( today - Date.parse(this.startDate)) / ( Date.parse(this.endDate) - Date.parse(this.startDate) ) ) * 100) + "%"
+        let progress =Math.round(( ( today - Date.parse(this.startDate)) / ( Date.parse(this.endDate) - Date.parse(this.startDate) ) ) * 100);
+        if (progress>100)
+            return "Is complete";
+        else
+            return progress+"%";
+
+        //return Math.round(( ( today - Date.parse(this.startDate)) / ( Date.parse(this.endDate) - Date.parse(this.startDate) ) ) * 100) + "%"
     }
 }
 
-let t1 = new Task('Выучить английский', 'Нужно выучить!', 'Jan 8, 2021','Feb 23, 2021' )
+let t1 = new Task('Сделать ПЗшки', 'Нужно сделать!', 'Jan 8, 2021','May 23, 2021' )
 console.log(t1)
 console.log(t1.subtask())
 
@@ -157,12 +176,13 @@ class Worker {
     }
     getSalary() { return console.log(`Salary worker: ${this.days * this.days}`) }
 }
-let w1 = new Worker('Misha', 'Reshetnikov', 400, 15)
-let w2 = new Worker('Shmidt', 'Kovalenko', 150, 10)
-let w3 = new Worker('Alex', 'Komisarov', 340, 20)
+let w1 = new Worker('Mike', 'Kirieshkev', 500, 15)
+let w2 = new Worker('Shmidt', 'Wallter', 650, 10)
+let w3 = new Worker('Alex', 'Komisarov', 140, 20)
 w1.getSalary();
 w2.getSalary();
 w3.getSalary();
-console.log(w1)
-console.log(w2)
-console.log(w3)
+console.log(w1);
+console.log(w2);
+console.log(w3);
+
