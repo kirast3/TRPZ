@@ -93,3 +93,76 @@ let generator2 = sequence(7,1);
 // console.log(generator());
 // console.log(generator2());
 // console.log(generator());
+
+//Task 6
+let characters = [
+    {name: "Barney", age: 36},
+    {name: "Fred", age: 40}
+];
+
+function pluck(array) {
+    return array.map(item => item.name)
+        .filter((value, index, self) => self.indexOf(value) === index)
+}
+
+console.log(pluck(characters));
+
+//Task 7
+
+function count(obj) {
+    let count = 0;
+    for (let key in obj) {
+        count++
+    }
+    return count;
+}
+
+let a = { a: 1, b: 2 };
+console.log(count(a)); // 2
+let b = function () {};
+console.log(count(b)); // 0
+let c = [1, 2, 3];
+console.log(count(c)); // 3
+let d = [];
+d[100] = 1;
+console.log(count(d)); // 1
+
+//Task 8
+
+class Task {
+    constructor(name, description, startDate, endDate) {
+        this.name = name;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+    subtask(){
+        let today = new Date();
+        return Math.round(( ( today - Date.parse(this.startDate)) / ( Date.parse(this.endDate) - Date.parse(this.startDate) ) ) * 100) + "%"
+    }
+}
+
+let t1 = new Task('Выучить английский', 'Нужно выучить!', 'Jan 8, 2021','Feb 23, 2021' )
+console.log(t1)
+console.log(t1.subtask())
+
+
+//Task 9
+class Worker {
+    constructor(name, surname, rate, days) {
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
+    }
+    getSalary() { return console.log(`Salary worker: ${this.days * this.days}`) }
+}
+let w1 = new Worker('Misha', 'Reshetnikov', 400, 15)
+let w2 = new Worker('Shmidt', 'Kovalenko', 150, 10)
+let w3 = new Worker('Alex', 'Komisarov', 340, 20)
+w1.getSalary();
+w2.getSalary();
+w3.getSalary();
+console.log(w1)
+console.log(w2)
+console.log(w3)
