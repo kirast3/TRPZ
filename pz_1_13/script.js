@@ -80,3 +80,16 @@ class Random {
 // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // console.log(Random.nextElement(arr))
 
+//Task 5
+
+function sequence(start, step) {
+    return () => (start === 0 ? start += 1 : start += step)
+}
+let generator = sequence(10, 3);
+let generator2 = sequence(7,1);
+
+// console.log(generator());
+// console.log(generator2());
+// console.log(generator());
+// console.log(generator2());
+// console.log(generator());
